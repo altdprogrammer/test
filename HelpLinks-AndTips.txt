@@ -1,0 +1,22 @@
+https://robohash.org/ => Getting robot images
+https://jsonplaceholder.typicode.com/users => Getting users list
+
+# Tips
+
+# Regarding setSate
+setState is asynchronous. So if we print it right after setting it will not display the updated value
+i.e
+
+this.setState({ searchField: e.target.value }
+console.log(searchField);
+
+The above will not display the most uptodate value
+
+In order to get that we need to rewrite the code as follows
+
+this.setState({ searchField: e.target.value, () => {
+              console.log(this.state.searchField);
+            }}
+
+The above code will show the update value because the console.log will be executed only after setting the State       
+
